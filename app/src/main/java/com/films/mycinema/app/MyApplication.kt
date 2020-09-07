@@ -2,6 +2,8 @@ package com.films.mycinema.app
 
 import android.app.Application
 import com.films.mycinema.app.api.ApiClient
+import com.films.mycinema.app.view.home.HomeViewModel
+import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 
@@ -20,5 +22,11 @@ private fun initRetrofit(){
             ApiClient.getClient()
         }
 
+    }
+}
+
+private fun initViewModel(){
+    module {
+        viewModel { HomeViewModel() }
     }
 }
