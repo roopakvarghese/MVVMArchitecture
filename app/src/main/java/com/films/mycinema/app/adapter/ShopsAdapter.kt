@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.films.mycinema.app.BR
 import com.films.mycinema.app.R
 import com.films.mycinema.app.databinding.RvListShopsBinding
 import com.films.mycinema.app.models.RvShopViewModel

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/shopsFragment">
 
 
     <fragment
@@ -11,4 +11,8 @@
         android:name="com.films.mycinema.app.view.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home"/>
+    <fragment
+        android:id="@+id/shopsFragment"
+        android:name="com.films.mycinema.app.view.films.ShopsFragment"
+        android:label="ShopsFragment" />
 </navigation>
