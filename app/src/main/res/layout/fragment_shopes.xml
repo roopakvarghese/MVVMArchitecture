@@ -12,6 +12,9 @@
         <variable
             name="decorator"
             type="com.films.mycinema.app.view.utils.CustomDecorator" />
+        <variable
+            name="vm"
+            type="com.films.mycinema.app.view.films.ShopViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,11 +22,12 @@
         android:layout_height="match_parent"
         tools:context="views.shops.ShopsFragment">
 
-        <TextView
-            android:id="@+id/textView"
+        <Button
+            android:id="@+id/btnCallApi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:onClick="@{(v)->clickHelper.onClick(v)}"
             android:text="Films"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +38,9 @@
             android:id="@+id/rvShopList"
             setAdapter="@{adapter}"
             setDecorator="@{decorator}"
-            setData="@{}"
+            setData="@{vm.rvShopViewModel}"
+            tools:listitem="@layout/rv_list_shops"
+            tools:itemCount="5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -47,7 +53,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/btnCallApi">
 
         </androidx.recyclerview.widget.RecyclerView>
 

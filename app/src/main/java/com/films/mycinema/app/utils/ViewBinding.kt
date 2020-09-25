@@ -23,3 +23,11 @@ fun setData(rv : RecyclerView, data : List<RvShopViewModel>?){
 fun setDecorator(rv: RecyclerView, decorator: CustomDecorator){
     rv.addItemDecoration(decorator)
 }
+
+@BindingAdapter("setShopData")
+fun setShopData(rv : RecyclerView, datas : List<RvShopViewModel>?){
+    val adapter = rv.adapter
+    if(adapter is ShopsAdapter){
+        adapter.setShopData(datas)
+    }
+}

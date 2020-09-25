@@ -17,8 +17,11 @@ import com.films.mycinema.app.view.BaseFragment
 import com.films.mycinema.app.view.utils.CustomDecorator
 
 import kotlinx.android.synthetic.main.fragment_shopes.*
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ShopsFragment: BaseFragment()  {
+
+    val vm : ShopViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,8 +33,8 @@ class ShopsFragment: BaseFragment()  {
         ,container
         ,false)
         binding.clickHelper = this
+        binding.vm = vm
         val adapter = ShopsAdapter();
-        adapter.setShopData(dummyData());
         binding.adapter = adapter
         binding.decorator = CustomDecorator(10,0)
         return binding.root
@@ -39,23 +42,14 @@ class ShopsFragment: BaseFragment()  {
 
 
 
-    private fun dummyData() : List<RvShopViewModel>{
-        return arrayListOf(
-            RvShopViewModel(ObservableField("Shop name")
-                ,ObservableField("owner Name")
-                ,ObservableField("9758475978"))
-            ,  RvShopViewModel(ObservableField("Shop name")
-                ,ObservableField("owner Name")
-                ,ObservableField("9758475978"))
-            ,  RvShopViewModel(ObservableField("Shop name")
-                ,ObservableField("owner Name")
-                ,ObservableField("9758475978"))
-        )
-    }
+
 
     override fun onClick(view: View) {
-        when(view){
+        when(view.id){
+            R.id.btnCallApi->{
+                vm.callApi()
 
+            }
         }
     }
 

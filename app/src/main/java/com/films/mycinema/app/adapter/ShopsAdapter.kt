@@ -13,7 +13,6 @@ class ShopsAdapter : RecyclerView.Adapter<ShopsAdapter.ViewHolder>()  {
     private var shopsViewModels:List<RvShopViewModel> = mutableListOf<RvShopViewModel>()
 
     fun setShopData(shopsViewModel: List<RvShopViewModel>? ){
-
         shopsViewModel?.let{
             this.shopsViewModels = it
             notifyDataSetChanged()
